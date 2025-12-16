@@ -1,0 +1,15 @@
+tags:
+  - Contacts
+summary: Kişiyi sil
+operationId: deleteContact
+security:
+  - bearerAuth: []
+parameters:
+  - in: path
+    name: contactId
+    required: true
+    schema:
+      type: string
+responses:
+  '204':
+    description: Kişi silindi

@@ -1,0 +1,41 @@
+tags:
+  - Contacts
+summary: ID ile kişi getir
+operationId: getContactById
+description: Belirtilen ID'ye sahip kişiyi veritabanından getirir.
+security:
+  - bearerAuth: []
+parameters:
+  - in: path
+    name: contactId
+    schema:
+      type: string
+    required: true
+    description: Kişinin benzersiz ID'si
+responses:
+  '200':
+    description: Kişi başarıyla bulundu
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: integer
+              example: 200
+            message:
+              type: string
+              example: Successfully found contact!
+            data:
+              type: object
+              properties:
+                _id:
+                  type: string
+                name:
+                  type: string
+                email:
+                  type: string
+                phoneNumber:
+                  type: string
+  '404':
+    description: Kişi bulunamadı

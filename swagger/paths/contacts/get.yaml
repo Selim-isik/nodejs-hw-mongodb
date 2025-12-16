@@ -1,0 +1,21 @@
+tags:
+  - Contacts
+summary: Tüm kişileri getir
+operationId: getContacts
+description: Sayfalama, filtreleme ve favori durumuna göre kişileri listeler.
+security:
+  - bearerAuth: []
+parameters:
+  - in: query
+    name: page
+    schema:
+      type: integer
+    description: Sayfa numarası
+  - in: query
+    name: perPage
+    schema:
+      type: integer
+    description: Sayfa başına kayıt sayısı
+responses:
+  '200':
+    description: Kişiler listelendi

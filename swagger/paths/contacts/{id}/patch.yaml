@@ -1,0 +1,30 @@
+tags:
+  - Contacts
+summary: Kişiyi güncelle
+operationId: updateContact
+security:
+  - bearerAuth: []
+parameters:
+  - in: path
+    name: contactId
+    required: true
+    schema:
+      type: string
+requestBody:
+  content:
+    multipart/form-data:
+      schema:
+        type: object
+        properties:
+          name:
+            type: string
+          email:
+            type: string
+          phoneNumber:
+            type: string
+          photo:
+            type: string
+            format: binary
+responses:
+  '200':
+    description: Kişi güncellendi
